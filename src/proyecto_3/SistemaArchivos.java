@@ -493,15 +493,12 @@ public class SistemaArchivos {
                                 archivo.bloqueInicial, false,
                                 rutaActual.ubicacion);
                     }
-                    if(archivo.nombre.equals(nombre)){
+                    if(archivo.nombre.equals(nombre) && bloquesLibres.get(archivo.bloqueInicial) == 1){
                         encontroArchivo = true;
-                        
                         archivo = cargarCarpetaArchivo(
                             archivo.bloqueInicial, false,
                             rutaActual.ubicacion);
-                        System.out.println(archivo.id);
-                        if(PermisosAbrirCerrar(archivo,4)){
-                            
+                        if(PermisosAbrirCerrar(archivo,4) && !archivo.esCarpeta){
                             String cadena = archivo.textoArchivo;
                             System.out.println(cadena);
                         }else System.out.println("No tiene permisos para leer el archivo"); 
