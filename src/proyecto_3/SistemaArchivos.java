@@ -495,10 +495,13 @@ public class SistemaArchivos {
                     }
                     if(archivo.nombre.equals(nombre)){
                         encontroArchivo = true;
+                        
                         archivo = cargarCarpetaArchivo(
                             archivo.bloqueInicial, false,
                             rutaActual.ubicacion);
+                        System.out.println(archivo.id);
                         if(PermisosAbrirCerrar(archivo,4)){
+                            
                             String cadena = archivo.textoArchivo;
                             System.out.println(cadena);
                         }else System.out.println("No tiene permisos para leer el archivo"); 
